@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>匹诺康尼的钟声在回响</title>
+    <link rel="stylesheet" href="./CSS/items.css"><link>
+    <!-- <script src="/JS/rotate.js"></script> -->
+</head>
+<body>
+    <img src="/asserts/images/匹诺康尼1.jpg" class="background" alt="">
+    <div class="clock">
+        <img src="/asserts/images/钟表小子.png" alt="" width="300" height="400" class="kid">
+            <div class="hour">
+                <div class="hz"></div>
+            </div>
+             <div class="min">
+                <div class="mz"></div>
+            </div>
+             <div class="sec">
+                <div class="sz"></div>
+            </div>
+    </div>
+</body>
+<script>
+    const hz = document.querySelector('.hz');
+    const mz = document.querySelector('.mz');
+    const sz = document.querySelector('.sz');
+    function Today(){
+    let day = new Date();
+    let hh = day.getHours()*30;
+    let mm = day.getMinutes()*6;
+    let ss = day.getSeconds()*6;
+    hz.style.transform = `rotateZ(${hh+mm/12}deg)`;
+    mz.style.transform = `rotateZ(${mm}deg)`;
+    sz.style.transform = `rotateZ(${ss}deg)`;
+    }
+     setInterval('Today()');
+        </script>
+</html>
